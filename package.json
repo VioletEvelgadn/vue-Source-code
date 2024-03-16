@@ -1,0 +1,12 @@
+{
+  "private": "true",
+  "workspaces": [
+    "packages/*"
+  ],
+  "name": "vue-Source-code",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:VioletEvelgadn/vue-Source-code.git",
+  "author": "xiaoH <2067163307@qq.com>",
+  "license": "MIT"
+}
