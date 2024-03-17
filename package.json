@@ -3,13 +3,22 @@
   "workspaces": [
     "packages/*"
   ],
+  "scripts": {
+    "build": "node scripts/build.js"
+  },
   "name": "vue-Source-code",
   "version": "1.0.0",
   "main": "index.js",
   "repository": "git@github.com:VioletEvelgadn/vue-Source-code.git",
   "author": "xiaoH <2067163307@qq.com>",
   "license": "MIT",
+  "type": "module",
   "devDependencies": {
+    "@rollup/plugin-json": "^6.1.0",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "execa": "^8.0.1",
+    "rollup": "^4.13.0",
+    "rollup-plugin-typescript2": "^0.36.0",
     "typescript": "^5.4.2"
   }
 }
