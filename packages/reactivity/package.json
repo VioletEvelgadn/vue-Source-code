@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "buildOptions": {
-    "name": "vueREactivity",
+    "name": "vueReactivity",
     "formats": [
       "esm-bundler",
       "csj",

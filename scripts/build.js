@@ -16,24 +16,41 @@ const dirs = fs.readdirSync('packages').filter(item => {
 // 并行打包
 
    async function build(target) {
-    console.log(target)
        // -c 执行rollup配置
-       await execa('rollup',[ '-c', "--environment", `TARGET:${target}`],{ stdio:'inherit' })
+       console.log(target,12345678)
+       await execa(
+           'rollup',
+           [
+               '-c',
+               '--environment',
+               `TARGET:${target}`
+           ],
+           { stdio: 'inherit' },
+       )
+       // await execa('rollup',
+       //     [
+       //         '-c',
+       //         "--environment",
+       //         `TARGET:${target}`],
+       //     { stdio: 'inherit' })
     }
 
     async function runParAller(dirs, itemFn) {
         //进行遍历
         let result = []
-        dirs.forEach(item => {
+
+        for ( let item of dirs ) {
             result.push(itemFn(item))
-        })
+        }
+        // dirs.forEach(item => {
+        //     result.push(itemFn(item))
+        // })
         // 存放打包的Promise，等待打包执行完毕调用runParAller方法
         return  Promise.all(result)
     }
 
     runParAller(dirs, build).then(() => {
-        console.log(1)
+        console.log('成功')
     })
 
-console.log(dirs)
 
